@@ -1,4 +1,4 @@
-# preserve-querystring
+# preserve-qs
 
 [![build status](https://img.shields.io/travis/niftylettuce/preserve-qs.svg)](https://travis-ci.org/niftylettuce/preserve-qs)
 [![code coverage](https://img.shields.io/codecov/c/github/niftylettuce/preserve-qs.svg)](https://codecov.io/gh/niftylettuce/preserve-qs)
@@ -27,13 +27,13 @@
 [npm][]:
 
 ```sh
-npm install preserve-querystring
+npm install preserve-qs
 ```
 
 [yarn][]:
 
 ```sh
-yarn add preserve-querystring
+yarn add preserve-qs
 ```
 
 
