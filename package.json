@@ -2,7 +2,7 @@
   "name": "preserve-qs",
   "description":
     "Preserve querystrings during redirect and creating new URLs for Node.js and browser environments (supports Lad, Koa, Express, and Connect)",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
   "bugs": {
     "url": "https://github.com/niftylettuce/preserve-qs/issues",
