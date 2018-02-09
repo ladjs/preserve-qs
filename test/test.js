@@ -44,3 +44,10 @@ test('throws error with invalid string for new url', t => {
   const error = t.throws(() => preserveQs('/'));
   t.regex(error.message, /New path must be a string/);
 });
+
+test('should blacklist properties passed', t => {
+  t.is(
+    preserveQs(environments[0], '/boop?hello=false', ['foo']),
+    '/boop?hello=false'
+  );
+});

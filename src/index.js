@@ -1,6 +1,6 @@
 const URL = require('url-parse');
 
-const preserveQs = (ctx, str) => {
+const preserveQs = (ctx, str, blacklist = []) => {
   let originalUrl;
 
   // support Node.js (Koa/Express) and browser environments
@@ -33,11 +33,16 @@ const preserveQs = (ctx, str) => {
   const url = new URL(str);
   const path =
     url.origin === 'null' ? url.pathname : `${url.origin}${url.pathname}`;
-  const qs = URL.qs.stringify(
-    Object.assign({}, URL.qs.parse(originalUrl.query), URL.qs.parse(url.query)),
-    true
+  const query = Object.assign(
+    {},
+    URL.qs.parse(originalUrl.query),
+    URL.qs.parse(url.query)
   );
-
+  if (Array.isArray(blacklist) && blacklist.length > 0)
+    blacklist.forEach(prop => {
+      delete query[prop];
+    });
+  const qs = URL.qs.stringify(query, true);
   return path + qs;
 };
 

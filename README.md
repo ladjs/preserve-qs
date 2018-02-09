@@ -18,6 +18,7 @@
   * [Browser](#browser)
   * [Koa](#koa)
   * [Express](#express)
+* [Blacklist Properties](#blacklist-properties)
 * [Contributors](#contributors)
 * [License](#license)
 
@@ -82,6 +83,17 @@ preserveQs(req, '/foo/baz');
 
 // res.redirect(preserveQs(req, '/foo/baz'));
 ```
+
+
+## Blacklist Properties
+
+If you wish to completely strip a single property or multiple from being included in the querystring then pass it as the third argument.
+
+```js
+preserveQs(req, '/foo/baz', [ 'page', 'limit' ]);
+```
+
+This would strip the `page` and `limit` from the URL (e.g. it would not have `?page=1&limit=10` in the URL).
 
 
 ## Contributors
