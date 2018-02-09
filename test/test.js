@@ -45,9 +45,23 @@ test('throws error with invalid string for new url', t => {
   t.regex(error.message, /New path must be a string/);
 });
 
-test('should blacklist properties passed', t => {
+test('should allow blacklist', t => {
   t.is(
     preserveQs(environments[0], '/boop?hello=false', ['foo']),
     '/boop?hello=false'
+  );
+});
+
+test('should allow override', t => {
+  t.is(
+    preserveQs(environments[0], '/boop?hello=false', { hello: true }),
+    '/boop?foo=bar&hello=true'
+  );
+});
+
+test('should allow override and blacklist', t => {
+  t.is(
+    preserveQs(environments[0], '/boop?hello=false', { hello: true }, ['foo']),
+    '/boop?hello=true'
   );
 });

@@ -18,6 +18,7 @@
   * [Browser](#browser)
   * [Koa](#koa)
   * [Express](#express)
+* [Override Properties](#override-properties)
 * [Blacklist Properties](#blacklist-properties)
 * [Contributors](#contributors)
 * [License](#license)
@@ -85,15 +86,28 @@ preserveQs(req, '/foo/baz');
 ```
 
 
+## Override Properties
+
+If you wish to override a property in the querystring, either from the original or the new URL, then you can pass a third argument of an object.
+
+```js
+preserveQs(req, '/foo/baz?hello=false', { hello: true });
+```
+
+In the example above, the output would have the `?hello=false` be overriden and become `?hello=true`.
+
+
 ## Blacklist Properties
 
-If you wish to completely strip a single property or multiple from being included in the querystring then pass it as the third argument.
+If you wish to completely strip a single property or multiple from being included in the querystring then pass it as the third or fourth argument.
 
 ```js
 preserveQs(req, '/foo/baz', [ 'page', 'limit' ]);
 ```
 
 This would strip the `page` and `limit` from the URL (e.g. it would not have `?page=1&limit=10` in the URL).
+
+You can also combine this with the `override` argument by invoking in order as `preserveQs(req, url, override, blacklist)`.
 
 
 ## Contributors

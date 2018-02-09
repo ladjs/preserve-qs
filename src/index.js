@@ -1,6 +1,11 @@
 const URL = require('url-parse');
 
-const preserveQs = (ctx, str, blacklist = []) => {
+const preserveQs = (ctx, str, override = {}, blacklist = []) => {
+  if (Array.isArray(override)) {
+    blacklist = override;
+    override = {};
+  }
+
   let originalUrl;
 
   // support Node.js (Koa/Express) and browser environments
@@ -36,7 +41,8 @@ const preserveQs = (ctx, str, blacklist = []) => {
   const query = Object.assign(
     {},
     URL.qs.parse(originalUrl.query),
-    URL.qs.parse(url.query)
+    URL.qs.parse(url.query),
+    override
   );
   if (Array.isArray(blacklist) && blacklist.length > 0)
     blacklist.forEach(prop => {
