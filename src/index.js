@@ -15,8 +15,8 @@ const preserveQs = (ctx, str, override = {}, blacklist = []) => {
       typeof ctx.request === 'object' &&
       typeof ctx.request.originalUrl === 'string'
     )
-      originalUrl = ctx.request.originalUrl;
-    else if (typeof ctx.originalUrl === 'string') originalUrl = ctx.originalUrl;
+      ({ originalUrl } = ctx.request);
+    else if (typeof ctx.originalUrl === 'string') ({ originalUrl } = ctx);
     else if (
       typeof ctx.location === 'object' &&
       typeof ctx.location.pathname === 'string' &&

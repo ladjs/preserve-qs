@@ -12,31 +12,31 @@
     "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)"
   ],
   "dependencies": {
-    "url-parse": "^1.2.0"
+    "url-parse": "^1.4.1"
   },
   "ava": {
     "failFast": true,
     "verbose": true
   },
   "devDependencies": {
-    "ava": "^0.22.0",
+    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "codecov": "^2.3.0",
-    "cross-env": "^5.0.5",
-    "eslint": "^4.5.0",
+    "babel-preset-env": "^1.7.0",
+    "codecov": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.5.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
-    "lint-staged": "^4.0.4",
-    "nyc": "^11.1.0",
-    "prettier": "^1.6.1",
-    "remark-cli": "^4.0.0",
-    "remark-preset-github": "^0.0.6",
+    "lint-staged": "^7.2.0",
+    "nyc": "^12.0.2",
+    "prettier": "^1.13.5",
+    "remark-cli": "^5.0.0",
+    "remark-preset-github": "^0.0.8",
     "xo": "latest"
   },
   "engines": {
-    "node": ">=8.3"
+    "node": ">=6.4"
   },
   "homepage": "https://github.com/niftylettuce/preserve-qs",
   "keywords": [
